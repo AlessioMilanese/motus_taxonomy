@@ -1,4 +1,4 @@
-In this repository we provide the taxonomy information of different mOTUs version, ready to be loaded into R.
+In this repository I provide the taxonomy information of different mOTUs version, ready to be loaded into R.
 
 ## mOTUs 3.0
 
