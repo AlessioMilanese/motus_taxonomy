@@ -52,7 +52,7 @@ load(url("https://github.com/AlessioMilanese/motus_taxonomy/blob/master/data/mot
 genus_table = motus_summarise_higher_level(PROFILES,motus2.5_taxonomy,"Genus")
 ```
 
-#### How to load a mOTUs table into R
+## How to load a mOTUs table into R
 
 Let's say you run:
 ```
