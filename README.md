@@ -52,6 +52,30 @@ load(url("https://github.com/AlessioMilanese/motus_taxonomy/blob/master/data/mot
 genus_table = motus_summarise_higher_level(PROFILES,motus2.5_taxonomy,"Genus")
 ```
 
+#### How to load a mOTUs table into R
 
+Let's say you run:
+```
+motus merge -i sample1.motus,sample2.motus -o ~/Desktop/merged.motus
+```
+on the terminal and obtain a motus table in `~/Desktop/merged.motus` which look like:
+```
+head ~/Desktop/merged.motus
+  # motus version 2.5.1 | merge 2.5.1 | info merged profiles: # git tag version 2.5.1 |  motus version 2.5.1 | map_tax 2.5.1 | gene database: nr2.5.1 | calc_mgc 2.5.1 -y insert.scaled_counts -l 75 | calc_motu 2.5.1 -k mOTU -C no_CAMI -g 3 | taxonomy: ref_mOTU_2.5.1 meta_mOTU_2.5.1 
+  # call: python motus merge -i sample1.motus,sample2.motus -o ~/Desktop/merged.motus
+  #consensus_taxonomy	sample1	sample2
+  Leptospira alexanderi [ref_mOTU_v25_00001]	0.0000000000	0.0000000000
+  Leptospira weilii [ref_mOTU_v25_00002]	0.0000000000	0.0000000000
+  Chryseobacterium sp. [ref_mOTU_v25_00004]	0.0000000000	0.0000000000
+  Chryseobacterium gallinarum [ref_mOTU_v25_00005]	0.0000000000	0.0000000000
+  Chryseobacterium indologenes [ref_mOTU_v25_00006]	0.0000000000	0.0000000000
+  Chryseobacterium artocarpi/ureilyticum [ref_mOTU_v25_00007]	0.0000000000	0.0000000000
+  Chryseobacterium jejuense [ref_mOTU_v25_00008]	0.0000000000	0.0000000000
+```
+
+In R, you can load it with:
+```
+merged_motus = read.csv("~/Desktop/merged.motus",header = T, sep = "\t", row.names = 1, skip = 2, check.names = F)
+```
 
 
